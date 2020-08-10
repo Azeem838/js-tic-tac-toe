@@ -2,15 +2,14 @@
 
 
 const Player = (name) => {
-  const getName = () => name;
-  return { getName };
+  return { name };
 };
 
 const gameBoard = (() => {
-  const gameboard = [];
+  const gameboard = ['','','','','','','','',''];
 
-  const player1 = 'eric';
-  const player2 = 'azeem';
+  const player1 = Player('eric');
+  const player2 = Player('azeem');
 
   let currentPlayer = player1;
 
@@ -37,12 +36,13 @@ const gameBoard = (() => {
   }
 
   const markBox = (e) => {
-    if (currentPlayer === player1) {
-      e.target.innerHTML = 'O'
-    }else {
-      e.target.innerHTML = 'X';
+    if (currentPlayer === player1 && e.target.innerHTML === '') {
+      e.target.innerHTML = "O";
+      switchPlayer();
+    } else if(currentPlayer === player2 && e.target.innerHTML === '') {
+      e.target.innerHTML = "X";
+      switchPlayer();
     }
-    switchPlayer();
   }
 
   return { gameboard, render, boxClicked, switchPlayer };
