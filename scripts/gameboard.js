@@ -7,7 +7,21 @@ const gameBoard = (() => {
       box.innerHTML = gameboard[i];
     };
   }
-  return { gameboard, render }
+
+  const boxClicked = () => {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+      box.addEventListener('click', markBox)
+    });
+  }
+
+  const markBox = (e) => {
+    console.log(e);
+    e.target.innerHTML = 'O'
+  }
+
+  return { gameboard, render, boxClicked };
 })();
 
 gameBoard.render();
+gameBoard.boxClicked();
