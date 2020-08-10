@@ -1,7 +1,7 @@
 const Game = (player, gameBoard) => {
 
   const swicthPlayer = () => {
-
+    
   }
 
   const checkMove = () => {
