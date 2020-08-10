@@ -1,1 +1,15 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+#gameboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+#gameboard .box {
+  border: 1px solid #000;
+  padding: 20px;
+}
+/*# sourceMappingURL=style.css.map */
