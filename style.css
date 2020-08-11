@@ -3,9 +3,7 @@
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  width: 40%;
-  margin: auto;
-  text-align: center;
+  margin-top: 1.5em;
 }
 
 #gameboard .box {
@@ -15,5 +13,15 @@
 
 #gameboard .box:hover {
   background-color: #bada55;
+}
+
+.container {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+#reset {
+  margin-top: 2em;
 }
 /*# sourceMappingURL=style.css.map */

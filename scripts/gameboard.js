@@ -4,7 +4,7 @@ const Player = (name) => {
   return { name };
 };
 
-const gameBoard = (() => {
+const gameBoard = (player1, player2) => {
   let gameboard = ["", "", "", "", "", "", "", "", ""];
   const winArr = [
     [0, 1, 2],
@@ -16,9 +16,6 @@ const gameBoard = (() => {
     [0, 4, 8],
     [2, 4, 6],
   ];
-
-  const player1 = Player("eric");
-  const player2 = Player("azeem");
 
   let currentPlayer = player1;
   let counter = 0;
@@ -101,8 +98,22 @@ const gameBoard = (() => {
   const resetBtn = document.querySelector("#reset");
   resetBtn.addEventListener("click", reset);
 
-  return { gameboard, render, boxClicked };
-})();
+  return { render, boxClicked };
+};
 
-gameBoard.render();
-gameBoard.boxClicked();
+const start = () => {
+  let firstPlayerName = document.querySelector("#player1").value;
+  let secondPlayerName = document.querySelector("#player2").value;
+  const player1 = Player(firstPlayerName);
+  const player2 = Player(secondPlayerName);
+  const newGame = gameBoard(player1, player2);
+  if (firstPlayerName == "" || secondPlayerName == "") {
+    alert("Player names can't be blank");
+  } else {
+    newGame.render();
+    newGame.boxClicked();
+  }
+};
+
+const startBtn = document.querySelector("#start");
+startBtn.addEventListener("click", start);
