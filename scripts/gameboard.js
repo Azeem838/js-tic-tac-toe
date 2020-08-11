@@ -59,12 +59,14 @@ const gameBoard = (player1, player2) => {
         boxes.forEach((box) => {
           box.removeEventListener("click", markBox);
         });
+        return true;
       }
     }
+    false;
   };
 
   const draw = () => {
-    if (counter == 9) {
+    if (counter == 9 && !winner) {
       alert("Game is a draw!");
     }
   };
