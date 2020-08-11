@@ -58,6 +58,10 @@ const gameBoard = (() => {
         second === third
       ) {
         alert("Congrats " + currentPlayer.name + " you have won!");
+        const boxes = document.querySelectorAll(".box");
+        boxes.forEach((box) => {
+          box.removeEventListener("click", markBox);
+        });
       }
     }
   };
@@ -86,7 +90,18 @@ const gameBoard = (() => {
     }
   };
 
-  return { gameboard, render, boxClicked, markBox, winner, winArr };
+  const reset = () => {
+    gameboard = ["", "", "", "", "", "", "", "", ""];
+    render();
+    currentPlayer = player1;
+    counter = 0;
+    boxClicked();
+  };
+
+  const resetBtn = document.querySelector("#reset");
+  resetBtn.addEventListener("click", reset);
+
+  return { gameboard, render, boxClicked };
 })();
 
 gameBoard.render();
