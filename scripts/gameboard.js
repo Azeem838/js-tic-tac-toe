@@ -21,6 +21,7 @@ const gameBoard = (() => {
   const player2 = Player("azeem");
 
   let currentPlayer = player1;
+  let counter = 0;
 
   const switchPlayer = () => {
     if (currentPlayer === player1) {
@@ -61,17 +62,27 @@ const gameBoard = (() => {
     }
   };
 
+  const draw = () => {
+    if (counter == 9) {
+      alert("Game is a draw!");
+    }
+  };
+
   const markBox = (e) => {
     if (currentPlayer === player1 && e.target.innerHTML === "") {
       e.target.innerHTML = "O";
       gameboard[e.target.dataset.set] = "O";
       winner();
       switchPlayer();
+      counter = counter + 1;
+      draw();
     } else if (currentPlayer === player2 && e.target.innerHTML === "") {
       e.target.innerHTML = "X";
       gameboard[e.target.dataset.set] = "X";
       winner();
       switchPlayer();
+      counter = counter + 1;
+      draw();
     }
   };
 
