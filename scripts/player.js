@@ -1,4 +1,5 @@
 const Player = (name) => {
-  const getName = () => name
-  return { getName }
-}
+  return { name };
+};
+
+export { Player };
