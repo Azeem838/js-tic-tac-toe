@@ -2,8 +2,9 @@ import { displayController } from "./dom.js";
 import { Game } from "./app.js";
 import { Player } from "./player.js";
 
+let gameboard = ["", "", "", "", "", "", "", "", ""];
+
 const start = () => {
-  let gameboard = ["", "", "", "", "", "", "", "", ""];
   let firstPlayerName = document.querySelector("#player1").value;
   let secondPlayerName = document.querySelector("#player2").value;
   const player1 = Player(firstPlayerName);
@@ -21,7 +22,11 @@ const start = () => {
 };
 
 const reset = () => {
-  return start();
+  gameboard = ["", "", "", "", "", "", "", "", ""];
+  displayController.render(gameboard);
+
+  document.querySelector("#player1").value = "";
+  document.querySelector("#player2").value = "";
 };
 
 displayController.btnListners(start, reset);
