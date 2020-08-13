@@ -7,27 +7,29 @@ const displayController = (() => {
   };
 
   const boxClicked = (markBox) => {
-    const boxes = document.querySelectorAll(".box");
+    const boxes = document.querySelectorAll('.box');
     boxes.forEach((box) => {
-      box.addEventListener("click", markBox);
+      box.addEventListener('click', markBox);
     });
   };
 
   const btnListners = (start, reset) => {
-    const startBtn = document.querySelector("#start");
-    startBtn.addEventListener("click", start);
-    const resetBtn = document.querySelector("#reset");
-    resetBtn.addEventListener("click", reset);
+    const startBtn = document.querySelector('#start');
+    startBtn.addEventListener('click', start);
+    const resetBtn = document.querySelector('#reset');
+    resetBtn.addEventListener('click', reset);
   };
 
   const endGame = (markBox) => {
-    const boxes = document.querySelectorAll(".box");
+    const boxes = document.querySelectorAll('.box');
     boxes.forEach((box) => {
-      box.removeEventListener("click", markBox);
+      box.removeEventListener('click', markBox);
     });
   };
 
-  return { render, boxClicked, btnListners, endGame };
+  return {
+    render, boxClicked, btnListners, endGame,
+  };
 })();
 
-export { displayController };
+export default displayController;
