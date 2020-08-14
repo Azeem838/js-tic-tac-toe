@@ -15,7 +15,6 @@
     "eol-last": "off",
     "arrow-parens": "off",
     "no-use-before-define": "off",
-    "no-alert": "off",
     "import/extensions": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
