@@ -8,24 +8,29 @@
   </head>
   <body>
     <div class="container">
-      <h2>Tic-Tac-Toe</h2>
-      <label for="player1">Player 1</label>
-      <input id="player1" name="player1" type="text" />
-      <label for="player2">Player 2</label>
-      <input id="player2" name="player2" type="text" />
-      <div id="gameboard">
-        <div class="box" data-set="0"></div>
-        <div class="box" data-set="1"></div>
-        <div class="box" data-set="2"></div>
-        <div class="box" data-set="3"></div>
-        <div class="box" data-set="4"></div>
-        <div class="box" data-set="5"></div>
-        <div class="box" data-set="6"></div>
-        <div class="box" data-set="7"></div>
-        <div class="box" data-set="8"></div>
-      </div>
-      <button id="reset">Reset</button>
-      <button id="start">Start</button>
+      <form onsubmit="return false;">
+        <h2>Tic-Tac-Toe</h2>
+        <label for="player1">Player 1</label>
+        <input id="player1" name="player1" type="text" required="true" />
+        <label for="player2">Player 2</label>
+        <input id="player2" name="player2" type="text" required="true" />
+
+        <h2 id="info"></h2>
+
+        <div id="gameboard">
+          <div class="box" data-set="0"></div>
+          <div class="box" data-set="1"></div>
+          <div class="box" data-set="2"></div>
+          <div class="box" data-set="3"></div>
+          <div class="box" data-set="4"></div>
+          <div class="box" data-set="5"></div>
+          <div class="box" data-set="6"></div>
+          <div class="box" data-set="7"></div>
+          <div class="box" data-set="8"></div>
+        </div>
+        <button id="reset">Reset</button>
+        <button id="start">Start</button>
+      </form>
     </div>
   </body>
   <script src="scripts/game.js" type="module"></script>

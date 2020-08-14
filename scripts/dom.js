@@ -7,28 +7,46 @@ const displayController = (() => {
   };
 
   const boxClicked = (markBox) => {
-    const boxes = document.querySelectorAll('.box');
+    const boxes = document.querySelectorAll(".box");
     boxes.forEach((box) => {
-      box.addEventListener('click', markBox);
+      box.addEventListener("click", markBox);
     });
   };
 
+  // const validateInput = (firstPlayer, secondPlayer) => {
+  //   firstPlayer.classList.add("error");
+  //   secondPlayer.classList.add("error");
+  // };
+
   const btnListners = (start, reset) => {
-    const startBtn = document.querySelector('#start');
-    startBtn.addEventListener('click', start);
-    const resetBtn = document.querySelector('#reset');
-    resetBtn.addEventListener('click', reset);
+    const startBtn = document.querySelector("#start");
+    startBtn.addEventListener("click", start);
+    const resetBtn = document.querySelector("#reset");
+    resetBtn.addEventListener("click", reset);
   };
 
   const endGame = (markBox) => {
-    const boxes = document.querySelectorAll('.box');
+    const boxes = document.querySelectorAll(".box");
     boxes.forEach((box) => {
-      box.removeEventListener('click', markBox);
+      box.removeEventListener("click", markBox);
     });
   };
 
+  const displayOutcome = (currentPlayer) => {
+    const outcome = document.getElementById("info");
+    if (currentPlayer) {
+      outcome.innerHTML = `Congrats ${currentPlayer.name} you have won!`;
+    } else {
+      outcome.innerHTML = "Game is a draw!";
+    }
+  };
+
   return {
-    render, boxClicked, btnListners, endGame,
+    render,
+    boxClicked,
+    btnListners,
+    endGame,
+    displayOutcome,
   };
 })();
 
