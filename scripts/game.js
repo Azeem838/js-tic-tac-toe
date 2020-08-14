@@ -15,9 +15,7 @@ const start = () => {
   const counter = 0;
   const newGame = Game(player1, player2, currentPlayer, gameboard, counter);
 
-  if (firstPlayerName === '' || secondPlayerName === '') {
-    // displayController.validateInput(firstPlayer, secondPlayer);
-  } else {
+  if (firstPlayerName || secondPlayerName) {
     displayController.render(gameboard);
     displayController.boxClicked(newGame.markBox);
 

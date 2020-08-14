@@ -13,11 +13,6 @@ const displayController = (() => {
     });
   };
 
-  // const validateInput = (firstPlayer, secondPlayer) => {
-  //   firstPlayer.classList.add("error");
-  //   secondPlayer.classList.add("error");
-  // };
-
   const btnListners = (start, reset) => {
     const startBtn = document.querySelector('#start');
     startBtn.addEventListener('click', start);
