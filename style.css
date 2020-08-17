@@ -1,0 +1,31 @@
+#gameboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 1.5em;
+}
+
+#gameboard .box {
+  border: 1px solid #000;
+  padding: 20px;
+}
+
+#gameboard .box:hover {
+  background-color: #bada55;
+}
+
+.container {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+#reset {
+  margin-top: 2em;
+}
+
+.hide {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
